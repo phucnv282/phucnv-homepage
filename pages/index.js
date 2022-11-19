@@ -3,9 +3,15 @@ import {
   Box,
   Heading,
   Image,
-  useColorModeValue
+  useColorModeValue,
+  Link,
+  Button
 } from '@chakra-ui/react'
+import Paragraph from '../components/paragraph'
 import Section from '../components/section'
+import NextLink from 'next/link'
+import { ChevronRightIcon } from '@chakra-ui/icons'
+import { BioSection, BioYear } from '../components/bio'
 
 const Page = () => {
   return (
@@ -49,7 +55,59 @@ const Page = () => {
         <Heading as="h3" variant={'section-title'}>
           Work
         </Heading>
-        <p>Paragraph</p>
+        <Paragraph>
+          Takuya is a freelance and a full-stack developer based in Osaka with a
+          passion for building digital services/stuff he wants. He has a knack
+          for all things launching products, from planning and designing all the
+          way to solving real-life problems with code. When not online, he loves
+          hanging out with his camera. Currently, he is living off of his own
+          product called{' '}
+          <NextLink href={'/works/inkdrop'}>
+            <Link>Inkdrop</Link>
+          </NextLink>
+          .
+        </Paragraph>
+        <Box align="center" my={4}>
+          <NextLink href={'/works'}>
+            <Button rightIcon={<ChevronRightIcon />} colorScheme="teal">
+              My portfolio
+            </Button>
+          </NextLink>
+        </Box>
+      </Section>
+
+      <Section delay={0.2}>
+        <Heading as={'h3'} variant="section-title">
+          Bio
+        </Heading>
+        <BioSection>
+          <BioYear>1998</BioYear>
+          Born in Bac Ninh, Vietnam.
+        </BioSection>
+        <BioSection>
+          <BioYear>2020</BioYear>
+          Completed the Bachelor&apos;s Program in the Information Technology at
+          University of Engineering and Technology - VNU
+        </BioSection>
+        <BioSection>
+          <BioYear>2018</BioYear>
+          Worked at Revotech International
+        </BioSection>
+        <BioSection>
+          <BioYear>2020</BioYear>
+          Worked as a Research Assistant at ORLab, Phenikaa University
+        </BioSection>
+        <BioSection>
+          <BioYear>2021 to present</BioYear>
+          Working as a Site Reliability Engineer at Teko
+        </BioSection>
+      </Section>
+
+      <Section delay={0.3}>
+        <Heading as={'h3'} variant="section-title">
+          I ♥
+        </Heading>
+        <Paragraph>Art, Science, Music, Computer</Paragraph>
       </Section>
     </Container>
   )
