@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Phuc's website",
   "scripts": {
-    "dev": "next dev -H 0.0.0.0",
+    "dev": "WATCHPACK_POLLING=true next dev -H 0.0.0.0",
     "build": "next build",
     "start": "next start",
     "prettier": "prettier --write .",
